@@ -1,0 +1,7 @@
+.hero-background {
+  background-image: url('shipping_houston_express.jpg');
+  background-size: 100% 100%;
+  width: 100vw;
+  height: 75vh;
+  box-shadow:inset 0 0 0 2000px rgba(68, 0, 255, 0.3);
+}
