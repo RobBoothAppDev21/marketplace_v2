@@ -14,6 +14,7 @@ gem "cssbundling-rails"
 gem "jbuilder"
 gem "http"
 gem 'faker'
+gem 'devise', "~> 4.8"
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
@@ -47,6 +48,7 @@ group :development do
   gem "better_errors"
   gem "binding_of_caller"
   gem "table_print"
+  gem "letter_opener"
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
