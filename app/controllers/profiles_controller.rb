@@ -1,4 +1,7 @@
 class ProfilesController < ApplicationController
+  before_action :set_profile, only: %i[show edit update destroy]
+  before_action :ensure_current_user_is_owner, only: %i[destroy update edit]
+  
   def new
   end
 
@@ -26,6 +29,17 @@ class ProfilesController < ApplicationController
   end
 
   private
+
+  def set_profile
+    @profile = Profile.find(params[:id])
+  end
+
+  def ensure_current_user_is_owner
+    if current_user != @profile.user
+      redirect_back fallback_location: root_url, alert: "You're not authorized for that."
+    end
+  end
+
   def profile_params
     params.require(:profile).permit(:first_name, :last_name, :user_id)
   end

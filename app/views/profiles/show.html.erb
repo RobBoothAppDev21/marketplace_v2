@@ -1,2 +1,10 @@
 <h1>Profiles#show</h1>
-<p>Find me in app/views/profiles/show.html.erb</p>
+
+<div>
+  <p>
+    <%= @profile.first_name %> <%= @profile.last_name %>
+  </p>
+  <p>
+    <%= current_user == @profile.user ? 'True' : 'False' %>
+  </p>
+</div>

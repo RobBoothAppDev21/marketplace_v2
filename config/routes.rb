@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, contollers: { registrations: 'users/registrations' }
   resources :profiles
 
   # get 'profiles/new'
